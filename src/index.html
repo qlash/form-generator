@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FormGenerator</title>
+</head>
+<body>
+  <!-- Formularz walidowany -->
+  <form id="form-register" class="form" data-validate></form>
+
+  <!-- Formularz bez walidowacji -->
+  <form id="form-login" class="form" data-validate></form>
+
+  <!-- Miejsce na skrypt inicjalizujący moduły -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const formRegister = new FormGenerator.FormGenerator('#form-register', [
+        {
+          "id": "fr-email",
+          "type": "email",
+          "name": "email",
+          "label": "Adres e-mail",
+          "required": true,
+          "autofocus": true
+        },
+        {
+          "id": "fr-password",
+          "type": "password",
+          "name": "password",
+          "label": "Hasło",
+          "required": true
+        },
+        {
+          "id": "fr-password_confirmation",
+          "type": "password",
+          "name": "password_confirmation",
+          "label": "Powtórz hasło",
+          "required": true
+        },
+        {
+          "type": "reset",
+          "label": "Wyczyść"
+        },
+        {
+          "type": "submit",
+          "label": "Zarejestruj"
+        }
+      ]);
+
+      new FormValidator.FormValidator(formRegister, () => alert('OK'))
+
+      new FormGenerator.FormGenerator('#form-login', [
+        {
+          "id": "fl-email",
+          "type": "email",
+          "name": "email",
+          "label": "Adres e-mail",
+          "autofocus": true
+        },
+        {
+          "id": "fl-password",
+          "type": "password",
+          "name": "password",
+          "label": "Hasło"
+        },
+        {
+          "type": "submit",
+          "label": "Zaloguj"
+        }
+      ])
+    });
+  </script>
+</body>
+</html>

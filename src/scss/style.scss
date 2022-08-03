@@ -1,0 +1,35 @@
+.form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+  &-group {
+    margin-bottom: 10px;
+  }
+
+  &-label {
+    display: block;
+  }
+
+  &-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.2s ease-in-out;
+  }
+
+  &-validation {
+    color: #f00;
+    font-size: 12px;
+    margin-top: 5px;
+    height: 12px;
+  }
+}
+
+
